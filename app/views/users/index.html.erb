@@ -1,0 +1,15 @@
+<h1>All Users</h1>
+<ul>
+<% @users.each do |user| %>
+  <% if user.tutor %>
+  <li>
+    Tutor: <%= link_to user.username, user_path(user) %>
+  </li>
+  <% else %>
+  <li>
+    <%= link_to user.username, user_path(user) %>
+  </li>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to "Create User", new_user_path %>
