@@ -1,0 +1,9 @@
+<%= form_for (@session) do |f| %>
+<%= f.label "Please enter a name for your session" %>
+<%= f.text_field :name %><br>
+
+<%= f.label "Choose a Buddy" %>
+<%= f.collection_select(:tutor_id, User.all, :id, :first_name) %><br>
+
+<%= f.submit "Create Session" %>
+<% end %>
