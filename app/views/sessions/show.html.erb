@@ -1,0 +1,9 @@
+<%=@session.name %><br>
+
+<% if @session.date > Time.now %>
+<%=link_to "Make changes to this session", edit_session_path(@session) %>
+<%end%>
+
+<% if @session.date > Time.now %>
+<%=link_to "Cancel this session", session_path(@session), method: :delete, data: {confirm: "Are you sure you want to cancel?"} %>
+<%end%>
