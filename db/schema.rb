@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_180218) do
+ActiveRecord::Schema.define(version: 2019_05_28_200612) do
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "study_buddies", force: :cascade do |t|
+    t.integer "tutor_id"
+    t.integer "student_id"
+  end
+
+  create_table "study_sessions", force: :cascade do |t|
     t.string "name"
     t.integer "tutor_id"
     t.integer "student_id"
     t.integer "subject_id"
     t.datetime "date"
-  end
-
-  create_table "study_buddies", force: :cascade do |t|
-    t.integer "tutor_id"
-    t.integer "student_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2019_05_28_180218) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "password"
     t.text "bio"
     t.boolean "tutor"
+    t.string "password_digest"
   end
 
 end

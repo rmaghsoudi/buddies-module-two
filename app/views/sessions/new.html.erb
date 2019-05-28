@@ -1,9 +1,9 @@
-<%= form_for (@session) do |f| %>
-<%= f.label "Please enter a name for your session" %>
-<%= f.text_field :name %><br>
+<% if @error %>
+  <p><%= @error %></p>
+<% end %>
 
-<%= f.label "Choose a Buddy" %>
-<%= f.collection_select(:tutor_id, User.tutors, :id, :first_name) %><br>
-
-<%= f.submit "Create Session" %>
+<%= form_tag(login_path) do %>
+  Username: <%= text_field_tag("username") %>
+  Password: <%= password_field_tag("password") %>
+  <%= submit_tag("Login") %>
 <% end %>

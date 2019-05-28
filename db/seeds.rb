@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-Session.destroy_all
+StudySession.destroy_all
 Subject.destroy_all
 StudyBuddy.destroy_all
 
@@ -18,4 +18,4 @@ code = Subject.create(name: "Code", description: "The art of slowly killing some
 
 bud = StudyBuddy.create(tutor_id: jeff.id, student_id: dhara.id)
 
-study = Session.create(name: "Coding Session", student_id: bud.student.id , tutor_id: bud.tutor.id, subject_id: code.id, date: Time.now)
+study = StudySession.create(name: "Coding Session", student_id: bud.student.id , tutor_id: bud.tutor.id, subject_id: code.id, date: Time.now)
