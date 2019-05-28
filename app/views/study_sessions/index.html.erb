@@ -1,0 +1,12 @@
+<h1>Upcoming Sessions</h1>
+<p><% @study_sessions.select do |session| %>
+<%= link_to session.name, study_session_path(session) %>
+<%end%><br></p>
+
+<h1> Past Sessions </h1>
+<p><% @study_sessions.each do |session| %>
+<%= link_to session.name, study_session_path(session) %>
+<%end%><br></p>
+
+
+<p><%= link_to "Plan a New Session", new_study_session_path %></p>
