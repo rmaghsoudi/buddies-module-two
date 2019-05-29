@@ -10,4 +10,6 @@ resources :subjects, except: [:destroy]
 resources :ratings, except: [:destroy, :show]
 resources :study_sessions
 resources :users, except: [:destroy]
+
+
 end
