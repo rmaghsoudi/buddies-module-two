@@ -8,7 +8,7 @@ class StudySession < ActiveRecord::Base
   end
 
   def date_to_english
-    self.date.strftime("%m/%d at %I:%M%p")
+    self.date.strftime("%m/%d/%Y at %I:%M%p")
   end
 
 end

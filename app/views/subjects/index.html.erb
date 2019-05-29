@@ -1,7 +1,8 @@
-<h1> Choose your subject </h1>
-
+<h1> Available Subjects </h1>
+<ul>
 <% @subjects.each do |subject|%>
-  <%= link_to subject.name, subject_path(subject)%><br>
-    <%= link_to "Add new subject", new_subject_path(subject)%><br>
-
+  Subject: <%=subject.name %><br>
+  Description: <%= subject.description%><br>
 <%end%>
+</ul>
+<%= link_to "Back to Dashboard", user_path(session[:user_id])%>

@@ -10,7 +10,11 @@ Subject: <%= @study_session.subject.name %>
 When: <%= @study_session.date_to_english %>
 </li>
 </ul>
-
+<% if @user.tutor%>
+  <%= link_to "Your Dashboard", user_path(@study_session.tutor)%>
+<% else %>
+<%= link_to "Your Dashboard", user_path(@study_session.student)%>
+<% end %>
 <% if @study_session.upcoming? %>
 <%=link_to "Make changes to this session", edit_study_session_path(@study_session) %>
 
