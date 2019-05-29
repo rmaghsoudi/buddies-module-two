@@ -1,9 +1,18 @@
-<%=@study_session.name %><br>
+<h2><%=@study_session.name %><br></h2>
+<ul>
+<li>
+Buddy: <%= @study_session.tutor.full_name %>
+</li>
+<li>
+Subject: <%= @study_session.subject.name %>
+</li>
+<li>
+When: <%= @study_session.date_to_english %>
+</li>
+</ul>
 
-<% if @study_session.date > Time.now %>
+<% if @study_session.upcoming? %>
 <%=link_to "Make changes to this session", edit_study_session_path(@study_session) %>
-<%end%>
 
-<% if @study_session.date > Time.now %>
 <%=link_to "Cancel this session", study_session_path(@study_session), method: :delete, data: {confirm: "Are you sure you want to cancel?"} %>
 <%end%>

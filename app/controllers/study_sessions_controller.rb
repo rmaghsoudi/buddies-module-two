@@ -45,4 +45,7 @@ class StudySessionsController < ApplicationController
     params.require(:study_session).permit(:name,:tutor_id, :student_id, :subject_id, :date)
   end
 
+  # def date_params
+  #   params[:study_session][:date] = params[:date][:meetup_day]
+  # end
 end

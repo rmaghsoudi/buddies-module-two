@@ -11,5 +11,8 @@ class User < ActiveRecord::Base
     self.all.select { |user| user.tutor }
   end
 
+  def self.students
+    self.all.select { |user| user.tutor == false }
+  end
 
 end
