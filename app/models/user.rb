@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
     self.all.select { |user| user.tutor }
   end
 
+
 end

@@ -17,5 +17,3 @@ jeff = User.create({:first_name=>"Jeff", :last_name=>"Jefferson", :username=>"je
 code = Subject.create(name: "Code", description: "The art of slowly killing someone")
 
 bud = StudyBuddy.create(tutor_id: jeff.id, student_id: dhara.id)
-
-study = StudySession.create(name: "Coding Session", student_id: bud.student.id , tutor_id: bud.tutor.id, subject_id: code.id, date: Time.now)

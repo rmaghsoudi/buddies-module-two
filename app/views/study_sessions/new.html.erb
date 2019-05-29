@@ -1,9 +1,18 @@
-<%= form_for (@study_session) do |f| %>
-<%= f.label "Please enter a name for your study_session" %>
+<%= form_for @study_session do |f| %>
+<%= f.label :name %>
 <%= f.text_field :name %><br>
 
-<%= f.label "Choose a Buddy" %>
+<%= f.label :tutor_id %>
 <%= f.collection_select(:tutor_id, User.tutors, :id, :first_name) %><br>
 
-<%= f.submit "Create study_session" %>
-<% end %>
+<%= f.label :student_id %>
+<%= f.collection_select(:id, User.all, :id, :first_name) %><br>
+
+<%= f.label :subject_id %>
+<%= f.collection_select(:subject_id, Subject.all, :id, :name) %><br>
+
+<%= f.label :date %>
+<%= f.text_field :date %><br>
+
+<%= f.submit%>
+<%end%>
