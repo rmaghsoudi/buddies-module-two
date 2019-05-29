@@ -1,0 +1,28 @@
+body {
+  font-family: verdana, helvetica, sans-serif;
+  margin-left: 15%;
+  margin-right: 20%;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-weight: 600;
+}
+
+h1 {
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.9);
+  background-color: white;
+  text-align: center;
+  border: solid 1px black;
+}
+
+header {
+  /*Fallback for incompatibility with rgba()*/
+  background-color: rgb(255,255,255);
+  /*RGB with transparency option*/
+  background-color: rgba(255,255,255, 0.9);
+  color: red;
+  font-family: ubuntu_bold;
+  font-size: 400%;
+  text-align: center;
+  border-radius: 7%;
+}
