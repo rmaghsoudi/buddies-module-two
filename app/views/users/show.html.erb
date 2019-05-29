@@ -1,12 +1,31 @@
 <h2><%= @user.username %></h2>
+
+<div>
+  <div class="container-fluid bg-1 text-center">
 <h3>Name: </h3>
- <%= @user.full_name %>
+ <h5><%= @user.full_name %></h5>
  <% if @user.tutor %>
  <h3>Tutor</h3>
  <% end %>
-<h4>Bio:</h4>
-<%= @user.bio %>
-<br>
+ </div>
+
+ <div class="container-fluid bg text-center">
+<h3>Bio:</h3>
+<h5><%= @user.bio %></h5><br>
+</div>
+
+<div class="row justify-content-center">
+        <div><%= link_to "All Users", users_path %> |
+<%= link_to "Edit User", edit_user_path(@user) %>
+</div>
+    </div>
+
+    <style>
+.container-fluid {
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+</style>
 
 <% if @user.id == session[:user_id] && !@user.tutor %>
 <%= link_to "Edit User", edit_user_path(@user) %>
@@ -19,5 +38,3 @@
 <%= link_to "My Sessions", study_sessions_path %>
 <%= link_to "Subject Info", subjects_path %>
 <%end%>
-
-

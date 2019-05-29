@@ -13,9 +13,34 @@
 
  */
 
- 
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lato|Ubuntu');
+
+//ALL pages
+
+body, html {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    padding-top: 20px;
+    min-height: 75%;
+}
+
+footer {
+    height: 15%;
+    background-color: whitesmoke;
+}
+
+ul {
+    list-style: none; /* Removes list bullets */
+    padding: 10px;
+    margin: 0;
+}
+
 
 .navbar-menu {
   float: center;
@@ -51,6 +76,3 @@
   background-color: rgb(68, 163, 71);
   color: white;
 }
-
-
-     

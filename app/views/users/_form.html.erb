@@ -1,27 +1,44 @@
-<ul>
+
 <%= form_for(@user) do |f| %>
-<li>
-<%= f.label :first_name %><br>
-<%= f.text_field :first_name %>
-</li><li>
-<%= f.label :last_name %><br>
-<%= f.text_field :last_name %>
-</li><li>
-<%= f.label :username %><br>
-<%= f.text_field :username %>
-</li><li>
-<%= f.label :password %><br>
-<%= f.password_field :password %>
-</li><li>
-<%= f.label :password_confirmation %><br>
-<%= f.password_field :password_confirmation %>
-</li><li>
-<%= f.label :bio %><br>
-<%= f.text_area :bio %>
-</li><li>
+
+<div>
+<div class="row">
+<div class="form-group col-md-7">
+<%= f.label :first_name %>
+<%= f.text_field :first_name, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :last_name %>
+<%= f.text_field :last_name, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :username %>
+<%= f.text_field :username, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :password %>
+<%= f.password_field :password, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, class: "form-control", required: true %>
+</div>
+
+
+<div class="form-group col-md-7">
+<%= f.label :bio %>
+<%= f.text_area :bio, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
 <%= f.label :tutor %>
-<%=f.check_box :tutor, {}, 'true', 'false' %><br>
-</li>
-<%= f.submit %>
+<%=f.check_box :tutor, {}, 'true', 'false' %>
+</div>
+
+<%= f.submit "Submit", class: "btn btn-primary" %><br>
 <% end %>
-</ul>
+</div>
