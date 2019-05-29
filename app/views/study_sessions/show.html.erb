@@ -10,6 +10,9 @@ Subject: <%= @study_session.subject.name %>
 When: <%= @study_session.date_to_english %>
 </li>
 </ul>
+<% if !@study_session.upcoming? %>
+  <%= link_to "Leave a Review!", new_rating_path %>
+<% end %>
 <% if @user.tutor%>
   <%= link_to "Your Dashboard", user_path(@study_session.tutor)%>
 <% else %>
