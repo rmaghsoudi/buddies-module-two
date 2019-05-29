@@ -1,7 +1,12 @@
 class StudySessionsController < ApplicationController
 
   def index
-    @study_sessions = StudySession.all
+    @user = User.find(session[:user_id])
+    if @user.tutor
+      @study_sessions = StudySession.where(tutor_id: session[:user_id])
+    else
+      @study_sessions = StudySession.where(student_id: session[:user_id])
+    end
   end
 
   def new
@@ -18,6 +23,7 @@ class StudySessionsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
     @study_session = StudySession.find(params[:id])
   end
 

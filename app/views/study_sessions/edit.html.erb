@@ -1,8 +1,16 @@
-<%= form_for (@study_session) do |f| %>
-<%= f.label "Session Name" %>
+<h1>Edit Session</h1>
+<%= form_for @study_session do |f| %>
+<%= f.label :name %>
 <%= f.text_field :name %><br>
 
-<%= f.label "Buddy" %>
+<%= f.label :tutor_id %>
+<%= f.collection_select(:tutor_id, User.tutors, :id, :first_name, prompt: true) %><br>
+<%= f.label :subject_id %>
+<%= f.collection_select(:subject_id, Subject.all, :id, :name, prompt: true) %><br>
 
-<%= f.submit "Update Session" %>
-<% end %>
+<%= f.label :date %>
+
+<%= datetime_local_field(:study_session, :date) %><br>
+
+<%= f.submit%>
+<%end%>

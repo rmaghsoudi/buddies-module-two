@@ -1,12 +1,19 @@
 <h1>Upcoming Sessions</h1>
-<p><% @study_sessions.select do |session| %>
-<%= link_to session.name, study_session_path(session) %>
+<p><% @study_sessions.each do |study_session| %>
+<% if study_session.upcoming? %>
+<%= link_to study_session.name, study_session_path(study_session) %>
+<%end%>
 <%end%><br></p>
 
 <h1> Past Sessions </h1>
 <p><% @study_sessions.each do |study_session| %>
+<% if !study_session.upcoming? %>
 <%= link_to study_session.name, study_session_path(study_session) %>
+<%end%>
 <%end%><br></p>
 
-
+<% if !@user.tutor%>
 <p><%= link_to "Plan a New Session", new_study_session_path %></p>
+<% end %>
+<p><%= link_to "Back to Dashboard", user_path(session[:user_id]) %></p>
+
