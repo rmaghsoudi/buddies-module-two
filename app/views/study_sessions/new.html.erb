@@ -5,8 +5,7 @@
 <%= f.label :tutor_id %>
 <%= f.collection_select(:tutor_id, User.tutors, :id, :first_name, prompt: true) %><br>
 
-<%= f.label :student_id %>
-<%= f.collection_select(:student_id, User.students, :id, :first_name, prompt: true) %><br>
+<%= f.hidden_field(:student_id, value: session[:user_id]) %>
 
 <%= f.label :subject_id %>
 <%= f.collection_select(:subject_id, Subject.all, :id, :name, prompt: true) %><br>

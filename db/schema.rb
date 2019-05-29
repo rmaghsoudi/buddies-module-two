@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_200612) do
+ActiveRecord::Schema.define(version: 2019_05_29_185301) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.float "value"
+    t.text "review"
+    t.integer "user_id"
+  end
 
   create_table "study_buddies", force: :cascade do |t|
     t.integer "tutor_id"
