@@ -21,6 +21,7 @@ paula = User.create({:first_name=>"Paula", :last_name=>"Tulis", :username=>"ptul
 code = Subject.create(name: "Code", description: "The art of slowly killing someone")
 
 bud = StudyBuddy.create(tutor_id: jeff.id, student_id: dhara.id)
+
 bud2 = StudyBuddy.create(tutor_id: paula.id, student_id: romy.id)
 old_date = DateTime.new(2001,2,3,4,5,6)
 new_date = DateTime.new(2020,2,3,4,5,6)
@@ -28,4 +29,3 @@ new_date = DateTime.new(2020,2,3,4,5,6)
 session1 = StudySession.create(name:"Past Session", student_id: dhara.id, tutor_id: jeff.id, subject_id: code.id, date: old_date )
 session2 = StudySession.create(name:"Future Session", student_id: dhara.id, tutor_id: jeff.id, subject_id: code.id, date: new_date )
 session3 = StudySession.create(name:"Differen t Users", student_id: romy.id, tutor_id: paula.id, subject_id: code.id, date: new_date )
-

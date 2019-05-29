@@ -7,9 +7,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
+    <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
 
-  <body>
-    <%= yield %>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <%= link_to("Home", root_path, class: 'navbar-item') %>
+      <%= link_to("Buddies", users_path, class: 'navbar-item') %>
+      <%= link_to("Subjects", subjects_path, class: 'navbar-item') %>
+
+      <% if session[:user_id] %>
+              <%= link_to("Logout", logout_path, method: :delete, class: 'navbar-item') %>
+            <% else %>
+              <%= link_to("Login", login_path, class: 'navbar-item') %>
+            <% end %>
+
+
+    </div>
+  </nav>
+
+  <% if flash[:notice] %>
+    <div class="notification is-warning">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
