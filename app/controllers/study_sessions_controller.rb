@@ -1,5 +1,5 @@
 class StudySessionsController < ApplicationController
-  
+
   def index
     @study_sessions = StudySession.all
   end
@@ -12,9 +12,9 @@ class StudySessionsController < ApplicationController
     @study_session = StudySession.new(study_session_params)
     if @study_session.save
       redirect_to study_session_path(@study_session)
-    # else
-    #   render :new
-  end
+    else
+      render :new
+    end
   end
 
   def show
@@ -42,9 +42,7 @@ class StudySessionsController < ApplicationController
   private
 
   def study_session_params
-    params.require(:study_session).permit(:name, :tutor_id)
+    params.require(:study_session).permit(:name,:tutor_id, :student_id, :subject_id, :date)
   end
-
-
 
 end
