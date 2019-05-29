@@ -10,8 +10,47 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
- *= require bootstrap-datepicker // for css
+
  
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.navbar-menu {
+  float: center;
+  overflow: hidden;
+  background-color: rgb(4, 8, 247);
+  width: 100%;
+  padding: 0;
+}
+
+
+.navbar-menu a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  display: flex !important;
+  flex-basis: auto;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size:2rem;
+
+}
+
+.navbar-menu a:hover {
+  background-color: #ddd;
+  color: rgb(4, 8, 247);
+}
+
+.navbar-menu a.active {
+  background-color: rgb(68, 163, 71);
+  color: white;
+}
+
+
+     

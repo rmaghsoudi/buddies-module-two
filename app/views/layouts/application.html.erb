@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
+    <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" /> %>
     <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
 
@@ -21,7 +21,6 @@
             <% else %>
               <%= link_to("Login", login_path, class: 'navbar-item') %>
             <% end %>
-
 
     </div>
   </nav>

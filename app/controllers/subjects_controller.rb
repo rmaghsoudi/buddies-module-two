@@ -40,3 +40,4 @@ class SubjectsController < ApplicationController
     params.require(:subject).permit(:name, :description)
   end
 end
+

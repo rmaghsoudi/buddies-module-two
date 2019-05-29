@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 resources :subjects, except: [:destroy]
 resources :study_sessions
 resources :users, except: [:destroy]
+
+
 end
