@@ -10,8 +10,10 @@ Subject: <%= @study_session.subject.name %>
 When: <%= @study_session.date_to_english %>
 </li>
 </ul>
-<% if !@study_session.upcoming? %>
-  <%= link_to "Leave a Review!", new_rating_path %>
+<% if !@study_session.upcoming? && session[:user_id] == @study_session.student.id %>
+  <%= link_to "Review Your Buddi!", new_rating_path(id: @study_session.tutor.id) %>
+  <% elsif !@study_session.upcoming? && session[:user_id] == @study_session.tutor.id %>
+  <%= link_to "Review Your Buddy!", new_rating_path(id: @study_session.student.id) %>
 <% end %>
 <% if @user.tutor%>
   <%= link_to "Your Dashboard", user_path(@study_session.tutor)%>
