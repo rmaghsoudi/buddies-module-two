@@ -21,12 +21,12 @@
 
 <div class="row justify-content-center">
         <div>
-<%= link_to "What People are Saying", ratings_path(id: @user.id)%>
+<%= link_to "What People are Saying", ratings_path(id: @user.id)%> |
 <% if @user.id == session[:user_id] && !@user.tutor %>
-<%= link_to "Edit User", edit_user_path(@user) %>
-<%= link_to "My Sessions", study_sessions_path %>
-<%= link_to "Subject Info", subjects_path %>
-<%= link_to "Buddi Page", users_path %>
+<%= link_to "Edit User", edit_user_path(@user) %>  |
+<%= link_to "My Sessions", study_sessions_path %>  |
+<%= link_to "Subject Info", subjects_path %>  |
+<%= link_to "Buddi Page", users_path %> 
 <%end%>
 <% if @user.id == session[:user_id] && @user.tutor %>
 <%= link_to "Edit User", edit_user_path(@user) %>

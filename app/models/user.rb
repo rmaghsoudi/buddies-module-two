@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   has_many :study_sessions
   has_many :subjects, through: :study_sessions
-  has_secure_password
   has_many :ratings
+  has_secure_password
 
   validates :username, uniqueness: { case_sensitive: false }
+  validates :password, :presence => true, :length => {:within => 6..10}
   
+                   
   def full_name
     self.first_name + " " + self.last_name
   end
@@ -28,7 +30,7 @@ class User < ActiveRecord::Base
     if total == 0
       "No ratings yet"
     else
-    "Rating: #{sum/total} with #{self.ratings.count} ratings"
+    "Rating: #{sum/total} with #{self.ratings.count.round(1)} ratings"
     end
   end
 
