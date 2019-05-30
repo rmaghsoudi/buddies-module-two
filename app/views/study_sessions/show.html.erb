@@ -12,14 +12,16 @@ When: <%= @study_session.date_to_english %>
 </ul>
 
 <% if !@study_session.upcoming? && session[:user_id] == @study_session.student.id %>
-  <%= link_to "Review Your Buddi!", new_rating_path(id: @study_session.tutor.id, class:"btn btn-primary") %>
+  <%= link_to "Review Your Buddi!", new_rating_path(id: @study_session.tutor.id), {:class => "btn btn-primary"} %>
   <% elsif !@study_session.upcoming? && session[:user_id] == @study_session.tutor.id %>
-  <%= link_to "Review Your Buddy!", new_rating_path(id: @study_session.student.id, class:"btn btn-primary") %>
+  <%= link_to "Review Your Buddy!", new_rating_path(id: @study_session.student.id), {:class => "btn btn-primary"} %>
 
 <% end %>
 
 <% if @study_session.upcoming? %>
-<%=link_to "Make changes to this session", edit_study_session_path(@study_session), class:"btn btn-primary"  %>
+<%=link_to "Make changes to this session", edit_study_session_path(@study_session), {:class => "btn btn-primary"}  %>
 
 <%=link_to "Cancel this session", study_session_path(@study_session), method: :delete, data: {confirm: "Are you sure you want to cancel?"} %>
 <%end%>
+
+  
