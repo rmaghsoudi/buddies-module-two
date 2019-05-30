@@ -43,6 +43,7 @@ class StudySessionsController < ApplicationController
   def destroy
     @study_session = StudySession.find(params[:id])
     @study_session.delete
+    redirect_to study_sessions_path
   end
 
   private

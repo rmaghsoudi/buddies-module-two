@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :subjects, through: :study_sessions
   has_secure_password
 
+  validates :username, uniqueness: { case_sensitive: false }
+  
   def full_name
     self.first_name + " " + self.last_name
   end

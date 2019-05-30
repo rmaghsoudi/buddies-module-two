@@ -11,15 +11,15 @@ When: <%= @study_session.date_to_english %>
 </li>
 </ul>
 <% if !@study_session.upcoming? %>
-  <%= link_to "Leave a Review!", new_rating_path %>
+  <%= link_to "Leave a Review!", new_rating_path, class:"btn btn-primary"  %>
 <% end %>
 <% if @user.tutor%>
-  <%= link_to "Your Dashboard", user_path(@study_session.tutor)%>
+  <%= link_to "Your Dashboard", user_path(@study_session.tutor), class:"btn btn-primary" %>
 <% else %>
-<%= link_to "Your Dashboard", user_path(@study_session.student)%>
+<%= link_to "Your Dashboard", user_path(@study_session.student), class:"btn btn-primary" %>
 <% end %>
 <% if @study_session.upcoming? %>
-<%=link_to "Make changes to this session", edit_study_session_path(@study_session) %>
+<%=link_to "Make changes to this session", edit_study_session_path(@study_session), class:"btn btn-primary"  %>
 
 <%=link_to "Cancel this session", study_session_path(@study_session), method: :delete, data: {confirm: "Are you sure you want to cancel?"} %>
 <%end%>
