@@ -2,11 +2,11 @@
 <% if @error %>
   <p><%= @error %></p>
 <% end %>
-
+<h1>Login</h1>
 <div class="login">
 <%= form_tag(login_path) do %>
-  Username: <%= text_field_tag("username") %>
-  Password: <%= password_field_tag("password") %><br>
+  Username: <%= text_field_tag("username") %><br><br>
+  Password: <%= password_field_tag("password") %><br><br>
   <%= submit_tag("Login") %>
 <% end %>
 </div>

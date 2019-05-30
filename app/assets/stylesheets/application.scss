@@ -29,10 +29,14 @@ body, html {
     padding-top: 20px;
     min-height: 75%;
 }
-
+.container-fluid {
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
 footer {
     height: 15%;
     background-color: whitesmoke;
+
 }
 
 ul {
@@ -146,5 +150,5 @@ p.lead {
 }
 
 .login {
-  margin-top: 200px;
+  margin-top: 5%;
 }

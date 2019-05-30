@@ -1,17 +1,26 @@
 <h1>Upcoming Sessions</h1>
 <p><% @study_sessions.each do |study_session| %>
 <% if study_session.upcoming? %>
+<p style="font-size:30px;">
 <%= link_to study_session.name, study_session_path(study_session) %>
+</p>
 <% else %>
-<p><%="you have no upcoming sessions" %></p>
+<p style="color:cyan;font-size:30px;">
+<%="You have no upcoming sessions" %>
+</p>
 <%end%>
 <%end%><br></p>
 
 <h1> Past Sessions </h1>
 <p><% @study_sessions.each do |study_session| %>
 <% if !study_session.upcoming? %>
+<p style="font-size:30px;">
 <%= link_to study_session.name, study_session_path(study_session) %>
+</p>
 <% else %>
-<p><%= "you have no previous sessions" %></p>
+<p style="color:cyan;font-size:30px;">
+<%= "You have no previous sessions" %>
+</p>
 <%end%>
 <%end%><br></p>
+<%= link_to "Create a Session", new_study_session_path, {class: "btn btn-primary"}%>

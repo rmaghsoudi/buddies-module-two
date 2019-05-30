@@ -19,27 +19,22 @@
 <h5><%= @user.bio %></h5><br>
 </div>
 
-<div class="row justify-content-center">
+<div class="dashboard">
         <div>
-<%= link_to "What People are Saying", ratings_path(id: @user.id)%> |
+
+<%= link_to "What People are Saying", ratings_path(id: @user.id), {class: "btn btn-primary"} %> | 
 <% if @user.id == session[:user_id] && !@user.tutor %>
-<%= link_to "Edit User", edit_user_path(@user) %>  |
-<%= link_to "My Sessions", study_sessions_path %>  |
-<%= link_to "Subject Info", subjects_path %>  |
-<%= link_to "Buddi Page", users_path %> 
+<%= link_to "Edit User", edit_user_path(@user), {class: "btn btn-primary"} %> | 
+<%= link_to "My Sessions", study_sessions_path, {class: "btn btn-primary"} %> | 
+<%= link_to "Subject Info", subjects_path, {class: "btn btn-primary"}  %> | 
+<%= link_to "Buddi Page", users_path, {class: "btn btn-primary"}  %>
+
 <%end%>
 <% if @user.id == session[:user_id] && @user.tutor %>
-<%= link_to "Edit User", edit_user_path(@user) %>
-<%= link_to "My Sessions", study_sessions_path %>
-<%= link_to "Subject Info", subjects_path %>
+<%= link_to "Edit User", edit_user_path(@user), {class: "btn btn-primary"} %>
+<%= link_to "My Sessions", study_sessions_path, {class: "btn btn-primary"}  %>
+<%= link_to "Subject Info", subjects_path, {class: "btn btn-primary"}  %>
 
 <%end%>
 </div>
     </div>
-
-    <style>
-.container-fluid {
-  padding-top: 30px;
-  padding-bottom: 0px;
-}
-</style>
