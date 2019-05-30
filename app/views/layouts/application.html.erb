@@ -16,9 +16,7 @@
       <%= link_to("Dashboard", user_path(session[:user_id]), class: 'navbar-item') %>
       <%= link_to("Sessions", study_sessions_path(session[:user_id]), class: 'navbar-item') %>
       <%= link_to("Buddies", users_path, class: 'navbar-item') %>
-
       <%= link_to("Logout", logout_path, method: :delete, class: 'navbar-item') %>
-
     </div>
   </nav>
     <% else %>

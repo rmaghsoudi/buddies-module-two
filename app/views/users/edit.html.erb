@@ -1,4 +1,7 @@
 <h1>Edit User</h1>
 <%= render "form" %>
-<%= link_to "Cancel Edit", user_path(@user) %>
-
+<div class="row">
+  <div class="form-group col-md-7">
+<%= link_to "Cancel Edit", user_path(@user), class: "btn btn-primary" %>
+</div>
+</div>
