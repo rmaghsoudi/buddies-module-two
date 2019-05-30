@@ -19,12 +19,13 @@
 <%= f.collection_select(:subject_id, Subject.all, :id, :name, prompt: true) %>
 </div>
 
-<div class="row">
 <div class="form-group col-md-7">
 <%= f.label :date %>
-<%= datetime_local_field(:study_session, :date) %>
+<%= datetime_local_field(:study_session, :date, class: "form-control") %><br>
+</div>
 </div>
 
-<%= f.submit "Submit", class: "btn btn-primary" %><br>
+<div class="form-group col-md-7">
+<%= f.submit "Submit", class: "btn btn-primary col-md-3" %>
 <% end %>
 </div>

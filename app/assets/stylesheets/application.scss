@@ -50,7 +50,7 @@ body{
   background: url("bg.jpeg") no-repeat center center fixed;
   background-size: cover;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .back-color{
@@ -133,6 +133,6 @@ p {
 p.lead {
   color: white;
   font-size: 10.00rem;
-  
-  
+
+
 }
