@@ -1,10 +1,12 @@
+
 <h2> Plan a new study session </h2>
+<div class="form-group col-md-7">
 <%= form_for @study_session do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name, class: "form-control", required: true %><br>
 
 <%= f.label :tutor_id %>
-<%= f.collection_select(:tutor_id, User.tutors, :id, :first_name, prompt: true)%><br>
+<%= f.collection_select(:tutor_id, User.tutors, :id, :first_name, prompt: true, class: "form-control")%><br>
 
 <%= f.hidden_field(:student_id, value: session[:user_id]) %>
 
@@ -15,6 +17,6 @@
 
 <%= datetime_local_field(:study_session, :date, class: "form-control") %><br>
 
-<%= f.submit "Smash that create button", class: "btn btn-primary"%>
+<%= f.submit "Smash that create button", class: "btn btn-primary"%><br>
 <%end%>
-<%= link_to "Back to My Sessions", study_sessions_path %>
+</div>

@@ -43,17 +43,3 @@
   padding-bottom: 0px;
 }
 </style>
-
-<div class="user-footer">
-<% if @user.id == session[:user_id] && !@user.tutor %>
-<%= link_to "Edit User", edit_user_path(@user) %> |
-<%= link_to "My Sessions", study_sessions_path %> |
-<%= link_to "Subject Info", subjects_path %> |
-<%= link_to "Users", users_path %> |
-<%end%>
-<% if @user.id == session[:user_id] && @user.tutor %> |
-<%= link_to "Edit User", edit_user_path(@user) %> |
-<%= link_to "My Sessions", study_sessions_path %> |
-<%= link_to "Subject Info", subjects_path %> |
-<%end%>
-</div>
