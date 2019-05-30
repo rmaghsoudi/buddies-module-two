@@ -17,11 +17,7 @@ When: <%= @study_session.date_to_english %>
   <%= link_to "Review Your Buddy!", new_rating_path(id: @study_session.student.id, class:"btn btn-primary") %>
 
 <% end %>
-<% if @user.tutor%>
-  <%= link_to "Your Dashboard", user_path(@study_session.tutor), class:"btn btn-primary" %>
-<% else %>
-<%= link_to "Your Dashboard", user_path(@study_session.student), class:"btn btn-primary" %>
-<% end %>
+
 <% if @study_session.upcoming? %>
 <%=link_to "Make changes to this session", edit_study_session_path(@study_session), class:"btn btn-primary"  %>
 
