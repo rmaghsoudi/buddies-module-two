@@ -42,11 +42,12 @@ ul {
 }
 
 
-.navbar{
-  background-color:rgb(45, 48, 211);
+.navbar1{
+  background-color:rgb(22, 142, 255);
 }
 
-body{
+
+body.home{
   background: url("bg.jpeg") no-repeat center center fixed;
   background-size: cover;
   height: 100%;
@@ -57,11 +58,20 @@ body{
   background: white;
 }
 
+.navbar-home{
+  list-style: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    height:40px;
+
+}
 
 .navbar-menu {
   float: center;
   overflow: hidden;
-  background-color: rgb(45, 48, 211);
+  background-color: rgb(22, 142, 255);
   width: 100%;
   padding: 0;
 }

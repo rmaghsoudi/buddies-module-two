@@ -9,22 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" /> %>
     <body bgcolor="#E6E6FA"> 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <% if session[:user_id] %>
+    <nav class="navbar1" role="navigation" aria-label="main navigation">
 
     <div id="navbarBasicExample" class="navbar-menu">
-      <%= link_to("Home", root_path, class: 'navbar-item') %>
+      <%= link_to("Dashboard", user_path(session[:user_id]), class: 'navbar-item') %>
+      <%= link_to("Sessions", study_sessions_path(session[:user_id]), class: 'navbar-item') %>
       <%= link_to("Buddies", users_path, class: 'navbar-item') %>
-      <%= link_to("Subjects", subjects_path, class: 'navbar-item') %>
 
-      <% if session[:user_id] %>
-              <%= link_to("Logout", logout_path, method: :delete, class: 'navbar-item') %>
-            <% else %>
-              <%= link_to("Login", login_path, class: 'navbar-item') %>
-            <% end %>
+      <%= link_to("Logout", logout_path, method: :delete, class: 'navbar-item') %>
 
     </div>
   </nav>
+    <% else %>
+    <nav class="navbar2" role="navigation" aria-label="main navigation">
 
+    <div id="navbarBasicExample" class="navbar-home">
+    <%= image_tag("logo.jpeg")%>
+    </div>
+  </nav>
+  <%end%>
   <% if flash[:notice] %>
     <div class="notification is-warning">
       <p><%= flash[:notice] %></p>
