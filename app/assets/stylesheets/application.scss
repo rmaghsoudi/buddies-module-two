@@ -42,10 +42,26 @@ ul {
 }
 
 
+.navbar{
+  background-color:rgb(45, 48, 211);
+}
+
+body{
+  background: url("bg.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.back-color{
+  background: white;
+}
+
+
 .navbar-menu {
   float: center;
   overflow: hidden;
-  background-color: rgb(4, 8, 247);
+  background-color: rgb(45, 48, 211);
   width: 100%;
   padding: 0;
 }
@@ -55,7 +71,7 @@ ul {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0px 0px;
   text-decoration: none;
   font-size: 17px;
   position: relative;
@@ -63,7 +79,7 @@ ul {
   flex-basis: auto;
   align-items: center;
   padding: 0.5rem 1rem;
-  font-size:2rem;
+  font-size: 1.8rem;
 
 }
 
@@ -71,8 +87,52 @@ ul {
   background-color: #ddd;
   color: rgb(4, 8, 247);
 }
-
 .navbar-menu a.active {
   background-color: rgb(68, 163, 71);
+  color: rgb(19, 184, 69);
+}
+
+.btn-lg, .btn-group-lg>.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 430px;
+  margin-inline-end: 0px;
+}
+
+.lead {
+  font-size: 10.00rem;
+  font-weight: 300;
+  // background: url("bg.jpeg") no-repeat center center fixed;
+  // background-size: cover;
+  // height: 100%;
+  // overflow: hidden;
+}
+
+p.lead {
   color: white;
+  font-size: 10.00rem;
+  
+  
 }
