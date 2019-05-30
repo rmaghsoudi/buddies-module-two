@@ -1,25 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Buddi is your handy tool for linking up with study buddies!
 
-Things you may want to cover:
+Users can:
+- Sign up for an account
+- Edit their profile
+- Create a study session
+- View all subjects available
+- View past and upcoming study sessions
+- Edit upcoming study sessions
+- Leave ratings and reviews for buddies
+- View average ratings of buddies before setting up a new study session 
+- Delete their account
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
 # buddies-module-two

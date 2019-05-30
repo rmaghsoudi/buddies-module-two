@@ -1,38 +1,27 @@
 class RatingsController < ApplicationController
 
   def index
-    @ratings = Rating.where(user_id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
+    @user = User.find(params[:id])
     @rating = Rating.new
   end
 
   def create
+    @user = User.find(params[:rating][:user_id])
     @rating = Rating.new(rating_params)
     if @rating.save
-      redirect_to ratings_path
+      redirect_to :action => :index, id: @user.id
     else
       render :new
-    end
-  end
-
-  def edit
-    @rating = Rating.find(params[:id])
-  end
-
-  def update
-    @rating = Rating.find(params[:id])
-    if @rating.update(rating_params)
-      redirect_to ratings_path
-    else
-      render :edit
     end
   end
 
   private
 
   def rating_params
-    params_require(:rating).permit(:value, :review, :user_id)
+    params.require(:rating).permit(:value, :review, :user_id)
   end
 end

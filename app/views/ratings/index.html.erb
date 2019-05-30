@@ -1,0 +1,13 @@
+<h1>Reviews and Ratings for <%= @user.full_name %></h1>
+<% if @user.ratings.empty? %>
+<h3>This user has no ratings/reviews yet</h3>
+<% else %>
+<ul>
+<% @user.ratings.each do |r| %>
+<li>
+  Rating: <%= r.value %>
+</li>
+  Review: <%= r.review %>
+<% end %>
+</ul>
+<% end %>

@@ -1,0 +1,15 @@
+<% if @user.tutor %>
+<h1>Tell us about your Buddi!</h1>
+<% else %>
+<h1>Tell us about your Buddy!</h1>
+<% end %>
+
+<%= form_for(@rating) do |f| %>
+<%= f.label "Rating out of 5" %><br>
+<%= f.number_field :value, in: 0..5%><br>
+
+<%= f.label "Leave a Review" %><br>
+<%= f.text_area :review, size: "25x10" %><br>
+<%= f.hidden_field(:user_id, value: params[:id]) %>
+<%= f.submit "Submit"%>
+<% end %>
