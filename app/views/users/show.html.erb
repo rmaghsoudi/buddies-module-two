@@ -1,4 +1,8 @@
+<% if @user.id == session[:user_id]%>
 <h2>Welcome, <%= @user.username %>!</h2>
+<% else%>
+<h2><%= @user.username %></h2>
+<%end%>
 
 <div>
   <div class="container-fluid bg-1 text-center">
@@ -15,8 +19,10 @@
 </div>
 
 <div class="row justify-content-center">
-        <div><%= link_to "All Users", users_path %> |
-<%= link_to "Edit User", edit_user_path(@user) %>
+        <div><%= link_to "All Users", users_path %>
+          <%if @user.id == session[:user_id]%>
+| <%= link_to "Edit User", edit_user_path(@user) %>
+<%end%>
 </div>
     </div>
 
@@ -32,7 +38,7 @@
 <%= link_to "Edit User", edit_user_path(@user) %> |
 <%= link_to "My Sessions", study_sessions_path %> |
 <%= link_to "Subject Info", subjects_path %> |
-<%= link_to "Tutors", users_path %> |
+<%= link_to "Users", users_path %> |
 <%end%>
 <% if @user.id == session[:user_id] && @user.tutor %> |
 <%= link_to "Edit User", edit_user_path(@user) %> |
