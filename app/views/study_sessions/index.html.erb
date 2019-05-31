@@ -1,26 +1,30 @@
 <h1>Upcoming Sessions</h1>
-<p><% @study_sessions.each do |study_session| %>
-<% if study_session.upcoming? %>
-<p style="font-size:30px;">
-<%= link_to study_session.name, study_session_path(study_session) %>
-</p>
-<% else %>
-<p style="color:cyan;font-size:30px;">
-<%="You have no upcoming sessions" %>
-</p>
+<% @study_sessions.each do |study_session| %>
+  <% if study_session.upcoming? %>
+    <p style="font-size:30px;">
+    <%= link_to study_session.name, study_session_path(study_session) %>
+    </p>
+  <%end%>
 <%end%>
-<%end%><br></p>
+<%if @upcoming_total ==0%>
+    <p style="color:cyan;font-size:30px;">
+    <%="You have no upcoming sessions" %>
+    </p>
+<%end%>
 
 <h1> Past Sessions </h1>
-<p><% @study_sessions.each do |study_session| %>
-<% if !study_session.upcoming? %>
-<p style="font-size:30px;">
-<%= link_to study_session.name, study_session_path(study_session) %>
-</p>
-<% else %>
-<p style="color:cyan;font-size:30px;">
-<%= "You have no previous sessions" %>
-</p>
-<%end%>
-<%end%><br></p>
+  <% @study_sessions.each do |study_session| %>
+    <%if !study_session.upcoming?%>
+      <p style="font-size:30px;">
+      <%= link_to study_session.name, study_session_path(study_session) %>
+      </p>
+    <%end%>
+  <%end%>
+  <%if @past_total ==0%>
+    <p style="color:cyan;font-size:30px;">
+    <%="You have no past sessions" %>
+    </p>
+  <%end%>
+
+
 <%= link_to "Create a Session", new_study_session_path, {class: "btn btn-primary"}%>

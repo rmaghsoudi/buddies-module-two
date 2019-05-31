@@ -7,6 +7,19 @@ class StudySessionsController < ApplicationController
     else
       @study_sessions = StudySession.where(student_id: session[:user_id])
     end
+
+    @upcoming_total =0
+    @past_total = 0
+    @study_sessions.each do |session|
+      if session.upcoming?
+        @upcoming_total+=1 
+      else
+        @past_total +=1
+      end
+
+    end
+
+
   end
 
   def new
