@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_secure_password
 
+
   validates :username, uniqueness: { case_sensitive: false }
   validates :password, :presence => true, :length => {:within => 6..10}
+  validates_confirmation_of :password
+
   
                    
   def full_name

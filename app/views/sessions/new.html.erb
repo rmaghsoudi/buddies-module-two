@@ -1,7 +1,10 @@
 <body background="black">
+<br><br><br>
 <% if @error %>
-  <p><%= @error %></p>
+    <%=@errors %>
+      <li style="color: red;"> <%=@error%></li>
 <% end %>
+
 <h1>Login</h1>
 <div class="login">
 <%= form_tag(login_path) do %>
