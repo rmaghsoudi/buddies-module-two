@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     if total == 0
       "No ratings yet"
     else
-    "Rating: #{(sum/total).round(1)} with #{self.ratings.count} ratings"
+    "Rating: #{(sum/total).round(1)}"
     end
   end
 

@@ -45,10 +45,21 @@ ul {
     margin: 0;
 }
 
+
+.indexes{
+  background: url("stacc.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: scroll;
+}
+
+
+
 dd {
   padding: 20px;
   margin:0;
 }
+
 
 .navbar1{
   background-color:rgb(22, 142, 255);
@@ -66,8 +77,10 @@ body.home{
   background: white;
 }
 
+
+
 .navbar-home{
-  list-style: none;
+    list-style: none;
     font-weight: bold;
     margin-bottom: 10px;
     width: 100%;
@@ -156,4 +169,9 @@ p.lead {
 .dashboard{
   padding: 50px;
   text-align: center;
+  font-size: 25px;
+}
+
+.dash-menu{
+  display: inline-block;
 }
