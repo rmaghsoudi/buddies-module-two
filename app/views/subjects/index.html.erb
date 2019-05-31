@@ -1,7 +1,13 @@
 <h1> Available Subjects </h1><br>
+
   <% @subjects.each do |subject|%>
-  Subject: <%=subject.name %>
-  <blockquote>
-    Description: <%= subject.description%></blockquote>
+<dl>
+  <ul>
+   <dt><li><%=subject.name %></li><dt>
+     <dd>Description: <%= subject.description%></dd>
+     </dl>
+
 <%end%>
+
+
 <%= link_to "Back to Dashboard", user_path(session[:user_id]), class: "btn btn-primary"%>

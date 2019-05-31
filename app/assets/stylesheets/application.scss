@@ -41,11 +41,14 @@ footer {
 }
 
 ul {
-    list-style: none; /* Removes list bullets */
     padding: 10px;
     margin: 0;
 }
 
+dd {
+  padding: 20px;
+  margin:0;
+}
 
 .navbar1{
   background-color:rgb(22, 142, 255);

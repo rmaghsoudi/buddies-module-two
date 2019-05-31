@@ -17,12 +17,24 @@ dhara = User.create({:first_name=>"Dhara", :last_name=>"Patel", :username=>"123d
 jeff = User.create({:first_name=>"Jeff", :last_name=>"Jefferson", :username=>"jeffjeff", :password=>"itsnotjeff", tutor: true, :bio=>"love to teach, love to learn"})
 romy = User.create({:first_name=>"Romy", :last_name=>"Maghsoudi", :username=>"rmaghsoudi", :password=>"rmaghsoudi", tutor: false, :bio=>"I want to finish my damn project"})
 paula = User.create({:first_name=>"Paula", :last_name=>"Tulis", :username=>"ptulis", :password=>"ptulis", tutor: true, :bio=>":)"})
+tun = User.create({:first_name=>"Tun", :last_name=>"Khine", :username=>"TKhine", :password=>"tuntuntun", tutor: false, :bio=>"Just moved to Atlanta from NYC. Let's bike!"})
+preston = User.create({:first_name=>"Preston", :last_name=>"Elliott", :username=>"PrestonElliot", :password=>"prestone", tutor: true, :bio=>"Hi, I'm Preston and I love all things code. Need to set up time to talk?"})
+rose = User.create({:first_name=>"Rose", :last_name=>"Lake", :username=>"SeeRoseCode", :password=>"rosecode", tutor: true, :bio=>"New to coding, but really excited to work with others and build our skills together."})
+tez = User.create({:first_name=>"Tez", :last_name=>"Smith", :username=>"Tez", :password=>"tezteztez", tutor: true, :bio=>"Really interested in cars!"})
 
+
+
+30.times do Subject.create(
+  name: Faker::Educator.subject,
+  description: Faker::GreekPhilosophers.quote
+)
+end
 ruby = Subject.create(name: "Ruby", description: "on rails!")
 java = Subject.create(name: "Javascript", description: "Loves it")
 cooking = Subject.create(name: "Cooking", description: "The fine art of creating bomb meals")
 cars = Subject.create(name: "Cars", description: "vrooooooom")
 sql = Subject.create(name: "SQL", description: "learning how to query")
+
 
 
 bud = StudyBuddy.create(tutor_id: paula.id, student_id: dhara.id)
@@ -36,6 +48,15 @@ new_date = DateTime.new(2020,2,3,4,5,6)
 session1 = StudySession.create(name:"Dhara and Jeff go over coding", student_id: dhara.id, tutor_id: jeff.id, subject_id: ruby.id, date: old_date )
 session2 = StudySession.create(name:"Dhara and Jeff go over cooking", student_id: dhara.id, tutor_id: jeff.id, subject_id: cooking.id, date: new_date )
 session3 = StudySession.create(name:"Dhara and Paula talk about SQL", student_id: dhara.id, tutor_id: paula.id, subject_id: sql.id, date: new_date )
+session4 = StudySession.create(name:"Javascript practice", student_id: romy.id, tutor_id: jeff.id, subject_id: java.id, date: old_date )
+session5 = StudySession.create(name:"SQL time", student_id: romy.id, tutor_id: paula.id, subject_id: sql.id, date: old_date )
+session6 = StudySession.create(name:"cooking prep", student_id: romy.id, tutor_id: jeff.id, subject_id: cooking.id, date: old_date )
+
+
+
+
+
+
 
 review1 = Rating.create(value: 4, review: "Best person like ever, I want to teach him more", user_id: romy.id)
 review2 = Rating.create(value: 3, review: "Sucked, would not teach again", user_id: romy.id)
