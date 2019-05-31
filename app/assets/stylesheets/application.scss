@@ -63,6 +63,8 @@ body.home{
   background: white;
 }
 
+
+
 .navbar-home{
   list-style: none;
     font-weight: bold;
@@ -157,5 +159,11 @@ p.lead {
 .dashboard{
   padding: 50px;
   text-align: center;
+  font-size: 25px;
+
+}
+
+.dash-menu{
+  display: inline-block;
 
 }
