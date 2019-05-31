@@ -1,7 +1,58 @@
 <h1>Edit User</h1>
-<%= render "form" %>
+
+
+<% if @user.errors %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li style="color: red;"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+
+<div>
 <div class="row">
-  <div class="form-group col-md-7">
+<div class="form-group col-md-7">
+<%= f.label :first_name %>
+<%= f.text_field :first_name, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :last_name %>
+<%= f.text_field :last_name, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :username %>
+<%= f.text_field :username, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :password %>
+<%= f.password_field :password, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, class: "form-control", required: true %>
+</div>
+
+
+<div class="form-group col-md-7">
+<%= f.label :bio %>
+<%= f.text_area :bio, class: "form-control", required: true %>
+</div>
+
+<div class="form-group col-md-7">
+<%= f.label :Buddi %>
+<%=f.check_box :tutor, {}, 'true', 'false' %>
+</div> 
+
+<div class="form-group col-md-7">
+<%= f.submit "Submit", class:  "btn btn-primary" %>
+
 <%= link_to "Cancel Edit", user_path(@user), class: "btn btn-primary" %>
+<%end%>
 </div>
-</div>
+

@@ -41,10 +41,10 @@ footer {
 }
 
 ul {
-  
     padding: 10px;
     margin: 0;
 }
+
 
 .indexes{
   background: url("stacc.jpeg") no-repeat center center fixed;
@@ -53,13 +53,12 @@ ul {
   overflow: scroll;
 }
 
-// .user-show{
-//   background: url("journal.jpeg") no-repeat center center fixed;
-//   background-size: cover;
-//   height: 100%;
-//   overflow: scroll;
-// }
 
+
+dd {
+  padding: 20px;
+  margin:0;
+}
 
 
 .navbar1{
@@ -143,7 +142,6 @@ body.home{
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-
 }
 
 p {
@@ -157,14 +155,11 @@ p {
 .lead {
   font-size: 10.00rem;
   font-weight: 300;
-
 }
 
 p.lead {
   color: white;
   font-size: 10.00rem;
-
-
 }
 
 .login {
@@ -175,10 +170,8 @@ p.lead {
   padding: 50px;
   text-align: center;
   font-size: 25px;
-
 }
 
 .dash-menu{
   display: inline-block;
-
 }
