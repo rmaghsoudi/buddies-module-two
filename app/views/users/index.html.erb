@@ -1,9 +1,12 @@
-<h1>Buddis</h1>
-<ul>
+<h1>Buddies</h1>
 <% @users.each do |user| %>
+
   <% if user.tutor %>
+  <ul>
   <li>
-    <%= link_to user.username, user_path(user) %> <%= user.average_rating %>
+    <%= link_to user.username, user_path(user) %><br> 
+    <%= user.average_rating %> | <%= "#{user.ratings.count} reviews"%>
   </li>
+  </ul>
   <% end %>
 <% end %>
