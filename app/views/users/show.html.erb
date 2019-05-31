@@ -1,3 +1,4 @@
+<body class="user-show">
 <% if @user.id == session[:user_id]%>
 <h2>Welcome, <%= @user.username %>!</h2>
 <% else%>
@@ -42,3 +43,4 @@
 <%end%>
 </div>
     </div>
+    </body>
